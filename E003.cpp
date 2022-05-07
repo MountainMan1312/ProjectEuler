@@ -1,0 +1,12 @@
+/*E003.cpp
+* Returns the Largest Prime Factor of an integer
+*/
+
+#include <iostream>
+#include "ProjectEuler.h"
+
+int E003(uint64_t value)
+{
+	//TODO: Problem 003
+	return 0;
+}
