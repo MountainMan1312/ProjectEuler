@@ -7,6 +7,5 @@
 
 int E003(uint64_t value)
 {
-	//TODO: Problem 003
 	return 0;
 }
