@@ -11,9 +11,6 @@
 *	- Each problem gets its own file, in the format EXXX, where XXX = problem number
 * 
 * Future plans:
-* TODO: Add result-testing
-*	- Compare results from submitted functions to the correct answer
-* 
 * TODO: Add run-time testing
 *	- Test to see if submission runs within the suggested time (1 minute)
 * 
@@ -44,17 +41,12 @@ void testResult(string problem, int function, int answer)
 }
 
 int main()
-{	
-	//Keep these just in case, for now
-	//std::cout << "001: " << E001(3, 5, 1000) << "\n";   //Problem 001 - Sum of multiples of 3 or 5 under 1000
-	//std::cout << "002: " << E002(4000000) << "\n";      //Problem 002 - Sum of even Fibonacci terms under 4 million
-	//std::cout << "003: " << E003(600851475143) << "\n"; //TODO: Problem 003 - Largest Prime Factor of 600851475143
-
+{
 	//use this: testResult("", E(), );
 
 	testResult("001", E001(3, 5, 1000), 233168); //Problem 001 - Sum of multiples of 3 or 5 under 1000
-	testResult("002", E002(4000000), 4613732);          //Problem 002 - Sum of even Fibonacci terms under 4 million
-	testResult("003", E003(600851475143), 6857);     //TODO: Problem 003 - Largest Prime Factor of 600851475143
+	testResult("002", E002(4000000), 4613732);   //Problem 002 - Sum of even Fibonacci terms under 4 million
+	testResult("003", E003(600851475143), 6857); //TODO: Problem 003 - Largest Prime Factor of 600851475143
 
 	return 0;
 }
