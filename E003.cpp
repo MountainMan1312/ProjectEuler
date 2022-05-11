@@ -7,5 +7,6 @@
 
 int E003(uint64_t value)
 {
+
 	return 0;
 }
