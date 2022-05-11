@@ -22,7 +22,6 @@
 #include <chrono>
 #include <iomanip>
 #include "ProjectEuler.h"
-#include <Windows.h>
 
 using std::string;
 
