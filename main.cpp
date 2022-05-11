@@ -11,16 +11,11 @@
 *	- Each problem gets its own file, in the format EXXX, where XXX = problem number
 *
 * Future plans:
-* TODO: Add run-time testing
-*	- Test to see if submission runs within the suggested time (1 minute)
 *
 * TODO: Add multiple-submission functionality
 *
 * TODO: Add multi-threading
 *	- Each problem / submission gets its own thread (I guess? I don't know anything yet)
-*
-* TODO: Add reporting
-*	- Generate a report of results, run-times, etc.
 */
 
 #include <iostream>
@@ -29,15 +24,18 @@
 #include "ProjectEuler.h"
 #define string std::string //all my homies hate std::string
 
+
 //TEST RESULTS AND EXECUTION TIME
 void testResult(string problem, int testFunc, int answer)
 {
 	std::cout << problem << " | ";
 
+	testFunc; //Run it before it runs for more accurate measurement
+
 	auto startTime = std::chrono::system_clock::now(); //Start execution time test
-	auto result = testFunc;                            //Run submitted function
+	auto result = testFunc;                            //Pre-time-test warm-up for more accurate results
 	auto endTime = std::chrono::system_clock::now();   //End execution time test
-	
+
 	//Calculate execution time
 	std::chrono::duration<double> elapsed_seconds = endTime - startTime;
 	std::cout << std::setprecision(8) << std::fixed << elapsed_seconds.count() << " s" << " | ";
