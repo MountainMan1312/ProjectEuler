@@ -8,15 +8,13 @@
 
 /*EXPANSIONS TO PROJECT EULER TO MAKE IT MORE INTERESTING
 * So far, here's what I've done:
-* - Brought all the problems into a single project
-*	- Each problem gets its own file, in the format EXXX, where XXX = problem number
+* - Brought all the problems into a single project, instead of isolated programs
+* - Added correct-result testing
+* - Added execution-time testing, over an average of several runs
 *
 * Future plans:
-*
-* TODO: Add multiple-submission functionality
-*
-* TODO: Add multi-threading
-*	- Each problem / submission gets its own thread (I guess? I don't know anything yet)
+* - add multiple-submission functionality
+* - add multi-threading
 */
 
 
@@ -33,7 +31,7 @@ using std::string;
 void testResult(string problem, int (*testFunc)(), int answer)
 {
 	//INITIALIZE
-	int testIterations = 5;
+	int testIterations = 10;
 	auto startTime = std::chrono::system_clock::now();
 	auto endTime = std::chrono::system_clock::now();
 	std::chrono::duration<double> executionTimeAverage = endTime - startTime;
@@ -65,10 +63,6 @@ void testResult(string problem, int (*testFunc)(), int answer)
 	if (result == answer) { std::cout << "CORRECT   | " << result << "\n"; }
 	else { std::cout << "INCORRECT | " << result << "\n"; }
 }
-
-
-// PROJECT EULER PROBLEMS
-
 
 int main()
 {
