@@ -25,35 +25,38 @@
 #include <iomanip>
 #include "ProjectEuler.h"
 #include <Windows.h>
-#define string std::string //all my homies hate std::string
 
-
-//SETTINGS
-int testIterations = 5; //Number of test iterations for each submission
+using std::string;
 
 
 //TEST RESULTS AND EXECUTION TIME
 void testResult(string problem, int (*testFunc)(), int answer)
 {
 	//INITIALIZE
+	int testIterations = 5;
 	auto startTime = std::chrono::system_clock::now();
 	auto endTime = std::chrono::system_clock::now();
 	std::chrono::duration<double> executionTimeAverage = endTime - startTime;
 
-	auto result = testFunc(); //Pre-test run for more accurate measurement
+	//Pre-test run for more accurate measurement
+	auto result = testFunc();
 
-	std::cout << problem << " | "; //Problem number
+	//Problem number
+	std::cout << problem << " | ";
 
 	for (int i = 0; i < testIterations; ++i)
 	{
+		
 		auto startTime = std::chrono::system_clock::now(); //Start execution time test
-		auto result = testFunc();                          //Run the function
+		auto result = testFunc();                          //Run Function
 		auto endTime = std::chrono::system_clock::now();   //End execution time test
+
+		//Add execution time to sum
 		std::chrono::duration<double> executionTime = endTime - startTime;
 		executionTimeAverage = executionTimeAverage + executionTime;
 	}
 
-	//Calculate execution time
+	//Calculate execution time average
 	executionTimeAverage = executionTimeAverage / testIterations;
 	std::cout << std::setprecision(0) << std::fixed << executionTimeAverage.count() << " s  ";
 	std::cout << std::setprecision(4) << std::fixed << (executionTimeAverage.count() * 1000000) << " ms" << " | ";
