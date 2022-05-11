@@ -24,6 +24,7 @@
 #include <chrono>
 #include <iomanip>
 #include "ProjectEuler.h"
+#include <Windows.h>
 #define string std::string //all my homies hate std::string
 
 
@@ -48,13 +49,14 @@ void testResult(string problem, int (*testFunc)(), int answer)
 		auto startTime = std::chrono::system_clock::now(); //Start execution time test
 		auto result = testFunc();                          //Run the function
 		auto endTime = std::chrono::system_clock::now();   //End execution time test
-
-		//Running average of execution time
-		std::chrono::duration<double> executionTimeAverage = (executionTimeAverage + (endTime - startTime) / 2) ;
+		std::chrono::duration<double> executionTime = endTime - startTime;
+		executionTimeAverage = executionTimeAverage + executionTime;
 	}
 
 	//Calculate execution time
-	std::cout << std::setprecision(8) << std::fixed << executionTimeAverage.count() << " s" << " | ";
+	executionTimeAverage = executionTimeAverage / testIterations;
+	std::cout << std::setprecision(0) << std::fixed << executionTimeAverage.count() << " s  ";
+	std::cout << std::setprecision(4) << std::fixed << (executionTimeAverage.count() * 1000000) << " ms" << " | ";
 
 	//Correct or incorrect? Print results.
 	if (result == answer) { std::cout << "CORRECT   | " << result << "\n"; }
