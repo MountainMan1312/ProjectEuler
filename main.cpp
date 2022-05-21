@@ -1,8 +1,5 @@
 /*main.cpp
-* In this project, I aim to write a function for every Euler problem.
-* I intend for each function to be able to take any values, and test for the project's values here in the main.
-* Project Euler can be found at https://projecteuler.net/
-* It is recommended to avoid looking at other people's solutions until after you've tried it yourself.
+* https://projecteuler.net/
 */
 
 
