@@ -6,18 +6,6 @@
 */
 
 
-/*EXPANSIONS TO PROJECT EULER TO MAKE IT MORE INTERESTING
-* So far, here's what I've done:
-* - Brought all the problems into a single project, instead of isolated programs
-* - Added correct-result testing
-* - Added execution-time testing, over an average of several runs
-*
-* Future plans:
-* - add multiple-submission functionality
-* - add multi-threading
-*/
-
-
 #include <iostream>
 #include <chrono>
 #include <iomanip>
