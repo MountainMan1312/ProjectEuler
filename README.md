@@ -1,5 +1,7 @@
 # ProjectEuler
 
+ATTN: This project has been archived. I will have another Project Euler attempt at some point, with other languages.
+
 This project contains my solutions to the problems presented by [The Euler Project](https://projecteuler.net/).
 
 ## Expansions to Project Euler
